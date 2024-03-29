@@ -36,37 +36,24 @@ void MulI32a_Iavx(XmmVal* c, const XmmVal* a, const XmmVal* b)
 void Test_imageCompensation(BYTE *src, BYTE *dest, USHORT *nLightBalanceTbl)
 {
 	int temp[4] = {};
+	int n = 0;
+	BYTE con[16] = {};
+
 	for (size_t i = 0; i < 16; i += 4)
 	{
-		__m128i srcVec = _mm_cvtepu8_epi32(_mm_loadu_si128((__m128i*)src));
+		__m128i srcVec = _mm_cvtepu8_epi32(_mm_loadu_si128((__m128i*)&src[i]));
 		__m128i tblVec = _mm_cvtepu16_epi32(_mm_loadu_si128((__m128i*)nLightBalanceTbl));
 
 		__m128i res = _mm_mullo_epi32(srcVec, tblVec);
 		__m128i shiftRes = _mm_srli_epi32(res, 12);
 
-		//_mm_store_si128(reinterpret_cast<__m128i*>(&dest[i]),shiftRes);
-		_mm_store_si128((__m128i*)dest, shiftRes);
-		_mm_store_si128((__m128i*)dest, shiftRes);
-		_mm_store_si128((__m128i*)dest, shiftRes);
-		_mm_store_si128((__m128i*)dest, shiftRes);
+		_mm_store_si128((__m128i*)temp, shiftRes);
 
 
-		for (int i = 0; i < 4; ++i)
+		for (int j = 0; j < 4; j++)
 		{
-			std::cout << (int)dest[i] << " ";
+			con[n] = (temp[j]);
+			n++;
 		}
-
-		src += 4;
-
 	}
-
-	//	/*for (int j = 0; j < 4; j++)
-	//	{
-	//		_mm_store_si128((BYTE*)dest[i], shiftRes);
-	//	}*/
-	
-
-
-
-
 }
