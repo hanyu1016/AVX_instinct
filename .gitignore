@@ -48,3 +48,16 @@ _ReSharper*/
 
 #NuGet
 packages/
+git
+*.opendb
+*.db-wal
+*.db-shm
+*.db
+*.vsidx
+*.vsidx
+*.db
+*.vsidx
+.vs/ConsoleApplication1/FileContentIndex/b9c56455-d75b-4b34-897a-8938f15c1de7.vsidx
+.vs/ConsoleApplication1/v17/Browse.VC.db
+.vs/ConsoleApplication1/v17/Browse.VC.db
+.vs/ConsoleApplication1/FileContentIndex/b9c56455-d75b-4b34-897a-8938f15c1de7.vsidx
