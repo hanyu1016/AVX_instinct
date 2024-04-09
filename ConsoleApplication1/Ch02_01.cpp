@@ -17,13 +17,13 @@ int main()
 	/*MulI32a();
 	return 0;*/
 
-	const int N = 16;
-	BYTE src[N] = { 10,2, 3, 4, 255, 6, 7, 8,9,10, 11, 12, 13, 14, 15, 16 };
-	USHORT nLightBalanceTbl[8] = { 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096 };
+	const int N = 32;
+	BYTE src[N] = { 10,2, 3, 4, 255, 6, 7, 8,9,10, 11, 12, 13, 14, 15, 16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32 };
+	USHORT nLightBalanceTbl[N] = { 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096 };
 	BYTE dest[N] = {};
 	
-	Test_imageCompensation(src, dest, nLightBalanceTbl);
-
+	//Test_imageCompensation(src, dest, nLightBalanceTbl);
+	u32x8_imageCompensation(src, dest, nLightBalanceTbl);
 
 
 

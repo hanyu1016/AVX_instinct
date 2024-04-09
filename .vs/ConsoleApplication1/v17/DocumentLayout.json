@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{3F0C7167-DB85-4A0B-835F-19876D700388}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\Ch02_01.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F0C7167-DB85-4A0B-835F-19876D700388}|ConsoleApplication1\\ConsoleApplication1.vcxproj|C:\\Users\\levi_chuang\\source\\repos\\ConsoleApplication1\\ConsoleApplication1\\XmmVal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3F0C7167-DB85-4A0B-835F-19876D700388}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\XmmVal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3F0C7167-DB85-4A0B-835F-19876D700388}|ConsoleApplication1\\ConsoleApplication1.vcxproj|C:\\Users\\levi_chuang\\source\\repos\\ConsoleApplication1\\ConsoleApplication1\\Ch02_01.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3F0C7167-DB85-4A0B-835F-19876D700388}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\Ch02_01.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F0C7167-DB85-4A0B-835F-19876D700388}|ConsoleApplication1\\ConsoleApplication1.vcxproj|C:\\Users\\levi_chuang\\source\\repos\\ConsoleApplication1\\ConsoleApplication1\\XmmVal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3F0C7167-DB85-4A0B-835F-19876D700388}|ConsoleApplication1\\ConsoleApplication1.vcxproj|solutionrelative:ConsoleApplication1\\XmmVal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,27 +36,27 @@
               "RelativeDocumentMoniker": "ConsoleApplication1\\Ch02_01_fcpp.cpp",
               "ToolTip": "C:\\Users\\levi_chuang\\source\\repos\\ConsoleApplication1\\ConsoleApplication1\\Ch02_01_fcpp.cpp",
               "RelativeToolTip": "ConsoleApplication1\\Ch02_01_fcpp.cpp",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAADMAAAAAAAAA",
+              "ViewState": "AQIAAC4AAAAAAAAAAADwv0oAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-15T08:55:56.177Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Ch02_01.h",
               "DocumentMoniker": "C:\\Users\\levi_chuang\\source\\repos\\ConsoleApplication1\\ConsoleApplication1\\Ch02_01.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\Ch02_01.h",
               "ToolTip": "C:\\Users\\levi_chuang\\source\\repos\\ConsoleApplication1\\ConsoleApplication1\\Ch02_01.h",
               "RelativeToolTip": "ConsoleApplication1\\Ch02_01.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-03-15T08:48:30.081Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "XmmVal.h",
               "DocumentMoniker": "C:\\Users\\levi_chuang\\source\\repos\\ConsoleApplication1\\ConsoleApplication1\\XmmVal.h",
               "RelativeDocumentMoniker": "ConsoleApplication1\\XmmVal.h",
@@ -75,7 +75,7 @@
               "RelativeDocumentMoniker": "ConsoleApplication1\\Ch02_01.cpp",
               "ToolTip": "C:\\Users\\levi_chuang\\source\\repos\\ConsoleApplication1\\ConsoleApplication1\\Ch02_01.cpp",
               "RelativeToolTip": "ConsoleApplication1\\Ch02_01.cpp",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAmwBMAAAABAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-03-15T08:43:12.457Z",
               "EditorCaption": ""
