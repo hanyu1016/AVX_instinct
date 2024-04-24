@@ -40,7 +40,7 @@ void Test_imageCompensation(BYTE *src, BYTE *dest, USHORT *nLightBalanceTbl)
 	BYTE con[16] = {};
 
 	__m128i packed_zero = _mm_setzero_si128();
-	for (size_t i = 0; i < 32; i += 4)
+	for (size_t i = 0; i < 32; i += 8)
 	{
 		__m128i srcVec_u32x4 = _mm_cvtepu8_epi32(_mm_loadu_si128((__m128i*)&src[i]));
 

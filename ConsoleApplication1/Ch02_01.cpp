@@ -3,10 +3,41 @@
 
 #include <iostream>
 #include "Ch02_01.h"
+#include <intrin.h>
 
 static void AddI16(void);
 static void AddU16(void);
 static void MulI32a(void);
+#include <iostream>
+#ifdef _MSC_VER
+#include <intrin.h>
+#endif
+
+#ifdef __GNUC__
+
+void __cpuid(int* cpuinfo, int info)
+{
+	__asm__ __volatile__(
+		"xchg %%ebx, %%edi;"
+		"cpuid;"
+		"xchg %%ebx, %%edi;"
+		:"=a" (cpuinfo[0]), "=D" (cpuinfo[1]), "=c" (cpuinfo[2]), "=d" (cpuinfo[3])
+		: "0" (info)
+	);
+}
+
+unsigned long long _xgetbv(unsigned int index)
+{
+	unsigned int eax, edx;
+	__asm__ __volatile__(
+		"xgetbv;"
+		: "=a" (eax), "=d"(edx)
+		: "c" (index)
+	);
+	return ((unsigned long long)edx << 32) | eax;
+}
+
+#endif
 
 int main()
 {
@@ -17,16 +48,44 @@ int main()
 	/*MulI32a();
 	return 0;*/
 
-	const int N = 32;
-	BYTE src[N] = { 10,2, 3, 4, 255, 6, 7, 8,9,10, 11, 12, 13, 14, 15, 16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32 };
-	USHORT nLightBalanceTbl[N] = { 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096 };
-	BYTE dest[N] = {};
+
+	// AVX instinct code
 	
+	//const int N = 32;
+	//BYTE src[N] = { 10,2, 3, 4, 255, 6, 7, 8,9,10, 11, 12, 13, 14, 15, 16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32 };
+	//USHORT nLightBalanceTbl[N] = { 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096, 4096 };
+	//BYTE dest[N] = {};
+	//
 	//Test_imageCompensation(src, dest, nLightBalanceTbl);
-	u32x8_imageCompensation(src, dest, nLightBalanceTbl);
+	////u32x8_imageCompensation(src, dest, nLightBalanceTbl);
 
 
+	// CPUID code
+	bool avxSupportted = false;
 
+	int cpuinfo[4];
+	__cpuid(cpuinfo, 1);
+
+	avxSupportted = cpuinfo[2] & (1 << 28) || false;
+	bool osxsaveSupported = cpuinfo[2] & (1 << 27) || false;
+	if (osxsaveSupported && avxSupportted)
+	{
+		// _XCR_XFEATURE_ENABLED_MASK = 0
+		unsigned long long xcrFeatureMask = _xgetbv(0);
+		avxSupportted = (xcrFeatureMask & 0x6) == 0x6;
+	}
+
+	std::cout << "AVX:" << (avxSupportted ? 1 : 0) << std::endl;
+
+
+	if (avxSupportted)
+	{
+		std::cout << "AVX:" << (avxSupportted ? 1 : 0) << std::endl;
+	}
+	else
+	{
+		return 0;
+	}
 	return 0;
 }
 
@@ -92,3 +151,6 @@ static void MulI32a(void)
 		std::cout << "c[" << i << "]: " << std::setw(10) << c.m_I32[i] << nl;
 	}
 }
+
+
+
